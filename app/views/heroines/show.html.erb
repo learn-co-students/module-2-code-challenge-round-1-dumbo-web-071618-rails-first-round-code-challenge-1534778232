@@ -1,0 +1,11 @@
+Heroine Show Page
+<hr>
+<hr>
+Name: <%= @heroine.name %>
+<br>
+Super_name: <%= @heroine.super_name %>
+<br>
+Super Power: <%= link_to @heroine.power.name , power_path(@heroine.power) %>
+<br>
+<%= link_to 'Edit Heroine', edit_heroine_path(@heroine) %>
+<%= link_to 'See All Heroines', heroines_path %>

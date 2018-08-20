@@ -1,0 +1,13 @@
+Power Show Page
+<hr>
+<hr>
+Name: <%= @power.name %>
+<br>
+Description: <%= @power.description %>
+<p>These are all the heroines with this power:</p>
+<% @power.heroines.each do |heroine| %>
+<li><%= link_to heroine.super_name, heroine_path(heroine) %></li>
+    <% end %>
+<br>
+<%= link_to 'Edit Power', edit_power_path(@power) %>
+<%= link_to 'See All Powers', powers_path %>
