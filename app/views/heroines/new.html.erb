@@ -1,0 +1,27 @@
+<h1> Create Your Own Heroine! </h1>
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @heroine do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div><br>
+
+  <div>
+    <%= f.label :super_name %>
+    <%= f.text_field :super_name %>
+  </div><br>
+
+  <div>
+    <%= f.label :power %>
+    <%= f.collection_select :power_id, Power.all, :id, :name %>
+  </div><br>
+
+  <%= f.submit %>
+<% end %>
