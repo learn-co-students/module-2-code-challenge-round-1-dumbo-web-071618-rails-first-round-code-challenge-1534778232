@@ -1,0 +1,12 @@
+'CREATE A NEW POWER'
+<%= form_for(@power) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :description %>
+<%= f.text_area :description %>
+<br>
+<%= f.submit %>
+<% end %>
+
+<%= link_to 'See All POWERS', powers_path %>
