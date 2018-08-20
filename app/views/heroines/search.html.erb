@@ -1,0 +1,8 @@
+<h1>Searched Powers</h1>
+
+
+<% @heroines.each do |heroine| %>
+<li>
+  <%= "#{heroine.super_name} - #{heroine.power.name}" %>
+</li>
+<% end %>
