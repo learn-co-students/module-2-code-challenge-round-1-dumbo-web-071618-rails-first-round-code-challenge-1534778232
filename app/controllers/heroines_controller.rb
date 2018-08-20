@@ -1,6 +1,11 @@
 class HeroinesController < ApplicationController
   def index
     @heroines = Heroine.all
+    if params[:search]
+      @heroines.select {|heroine| heroine.power.name == params[:search]}
+    else
+      @heroines = Heroine.all.order("created_at DESC")
+    end
   end
 
   def show

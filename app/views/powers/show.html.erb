@@ -1,2 +1,8 @@
 <h3> <%= @power.name.capitalize %> </h3>
 <p> <%= @power.description %> </p>
+
+<% @power.heroines.each do |heroine| %>
+<p>
+  <%= link_to "#{heroine.name} - #{heroine.super_name} has this power.", heroine_path(heroine) %>
+</p>
+<% end %>
