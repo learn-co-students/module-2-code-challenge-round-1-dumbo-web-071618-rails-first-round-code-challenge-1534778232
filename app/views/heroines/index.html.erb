@@ -1,10 +1,23 @@
 <h2>All Heroines</h2>
 
+<% if !flash[:errors].nil? %>
+<%= flash[:errors] %>
+<% end %><br/><br/>
+
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search by Power:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<br/><br/>
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<% flash.clear %>
