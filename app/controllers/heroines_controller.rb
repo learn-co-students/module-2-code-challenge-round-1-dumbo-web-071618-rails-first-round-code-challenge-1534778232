@@ -15,7 +15,7 @@ class HeroinesController < ApplicationController
   def create
     @heroine = Heroine.new(heroine_params)
     if @heroine.save
-      redirect_to heroine_path(heroine)
+      redirect_to heroine_path(@heroine)
     else
       render :new
     end
